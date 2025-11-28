@@ -1,4 +1,4 @@
-1. Description fonctionnelle :
+# 1. Description fonctionnelle :
 
 Tout d'abord il faut définir les entités principales, qui sont, les quartiers, les bars, les bières et le prix des bières.
 
@@ -12,7 +12,7 @@ Pour terminer, ce sont les prix, qui représentent le prix d’une bière dans u
 Le prix est la modélisation de la relation N–N entre les bars et les bières tout en stockant le prix pratiqué.
 
 
-Les relations :
+# Les relations :
 
 Quartier -> Bar :
 Pour ce qui est des relations, on y voit qu'un quartier peut contenir de 0 à N bars, chaque quartier à son nombre de bars différents, et donc Un bar appartient exactement à un quartier.
@@ -24,7 +24,7 @@ Prix -> Bar / Prix -> Bière :
 Pour cette relation, chaque entrée de prix est rattachée à un bar et à une bière.
 
 
-Règles métier :
+# Règles métier :
 
 Les règles sur les bars :
 Un bar doit obligatoirement appartenir à un quartier. Le nom et l'adresse doivent être unique pour éviter les doublons.
@@ -36,7 +36,7 @@ Les règles sur les prix :
 Un prix est forcément positif. Un bar ne peut avoir qu’un seul prix actif par bière.
 
 
-Les attributs importants :
+# Les attributs importants :
 
 Les quartiers :
 Les attributs des quartiers sont, son quartier_id (Primary Key) et son nom.
