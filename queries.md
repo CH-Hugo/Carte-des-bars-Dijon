@@ -1,4 +1,4 @@
-1. Prix moyen de la bière par quartier
+# 1. Prix moyen de la bière par quartier
 
 SELECT 
     q.nom AS quartier,
@@ -9,7 +9,7 @@ JOIN quartiers q ON b.quartier_id = q.quartier_id
 GROUP BY q.nom
 ORDER BY prix_moyen DESC;
 
-2. Bars vendant l'IPA la moins chère
+# 2. Bars vendant l'IPA la moins chère
 
 WITH ipa_min AS (
     SELECT MIN(p.prix) AS min_prix
@@ -25,7 +25,7 @@ JOIN ipa_min im ON p.prix = im.min_prix
 WHERE bi.type = 'IPA';
 
 
-3. Bières vendues dans ≥ 5 bars :
+# 3. Bières vendues dans ≥ 5 bars :
 
 SELECT bi.nom AS biere, COUNT(DISTINCT p.bar_id) AS nb_bars
 FROM prix p
@@ -35,7 +35,7 @@ HAVING COUNT(DISTINCT p.bar_id) >= 5
 ORDER BY nb_bars DESC;
 
 
-4. Bars sans bière à moins de 6€
+# 4. Bars sans bière à moins de 6€
 
 SELECT b.nom AS bar
 FROM bars b
@@ -48,7 +48,7 @@ WHERE NOT EXISTS (
 ORDER BY b.nom;
 
 
-5. Top bar avec panier moyen maximum
+# 5. Top bar avec panier moyen maximum
 
 SELECT b.nom AS bar, ROUND(AVG(p.prix),2) AS panier_moyen
 FROM bars b
